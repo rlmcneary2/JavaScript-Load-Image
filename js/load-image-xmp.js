@@ -64,6 +64,10 @@
         }
         var xml = arrPacketData.join("");
 
+        loadImage.XmpMap.prototype.getXml = function (id) {
+            return xml;
+        }
+
         data.xmp = new loadImage.XmpMap();
 
         // Create an XMLDocument and extract the attributes from the
@@ -96,6 +100,12 @@
         var attr;
         for (var k = 0; k < node.attributes.length; k++) {
             attr = node.attributes[k];
+
+            // Don't include namespace definitions.
+            if (attr.prefix === "xmlns"){
+                continue;
+            }
+
             data.xmp[attr.localName] = attr.value;
 		}
     }

@@ -124,7 +124,7 @@
 
         // If the Description child has its own children the child is a
         // "complex" property and it will be ignored.
-        if (childNode.children) {
+        if (0 < childNode.children.length) {
           continue;
         }
 

@@ -18,10 +18,10 @@
     var id;
     for (prop in this) {
       if (this.hasOwnProperty(prop)) {
-          map[prop] = this[prop];
+        map[prop] = this[prop];
       }
     }
-    return map;
+    return map
   };
 
 }));

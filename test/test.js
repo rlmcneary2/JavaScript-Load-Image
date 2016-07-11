@@ -23,23 +23,98 @@
   var blobGIF = canCreateBlob && window.dataURLtoBlob(imageUrlGIF)
   // 1x2px JPEG (color white, with the Exif orientation flag set to 6):
   var b64DataJPEG = '/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAASUkqAAgAAA' +
-                    'ABABIBAwABAAAABgASAAAAAAD/2wBDAAEBAQEBAQEBAQEBAQEB' +
-                    'AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ' +
-                    'EBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEB' +
-                    'AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ' +
-                    'EBAQEBAQH/wAARCAABAAIDASIAAhEBAxEB/8QAHwAAAQUBAQEB' +
-                    'AQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBA' +
-                    'QAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAk' +
-                    'M2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1' +
-                    'hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKj' +
-                    'pKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+' +
-                    'Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAA' +
-                    'AAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAx' +
-                    'EEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl' +
-                    '8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2' +
-                    'hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmq' +
-                    'srO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8v' +
-                    'P09fb3+Pn6/9oADAMBAAIRAxEAPwD+/iiiigD/2Q=='
+                    'ABABIBAwABAAAABgAAAAAAAAD/4Qr7aHR0cDovL25zLmFkb2Jl' +
+                    'LmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49J++7vycgaW' +
+                    'Q9J1c1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCc/Pgo8eDp4bXBt' +
+                    'ZXRhIHhtbG5zOng9J2Fkb2JlOm5zOm1ldGEvJyB4OnhtcHRrPS' +
+                    'dJbWFnZTo6RXhpZlRvb2wgOS45Nyc+CjxyZGY6UkRGIHhtbG5z' +
+                    'OnJkZj0naHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZG' +
+                    'Ytc3ludGF4LW5zIyc+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6' +
+                    'YWJvdXQ9JycKICB4bWxuczp4bXA9J2h0dHA6Ly9ucy5hZG9iZS' +
+                    '5jb20veGFwLzEuMC8nPgogIDx4bXA6UmF0aW5nPjU8L3htcDpS' +
+                    'YXRpbmc+CiA8L3JkZjpEZXNjcmlwdGlvbj4KPC9yZGY6UkRGPg' +
+                    'o8L3g6eG1wbWV0YT4KICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'IAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCi' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAg' +
+                    'ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC' +
+                    'AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK' +
+                    'PD94cGFja2V0IGVuZD0ndyc/Pv/bAEMAAQEBAQEBAQEBAQEBAQ' +
+                    'EBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB' +
+                    'AQEBAQEBAQEBAQEBAf/bAEMBAQEBAQEBAQEBAQEBAQEBAQEBAQ' +
+                    'EBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB' +
+                    'AQEBAQEBAf/AABEIAAEAAgMBIgACEQEDEQH/xAAfAAABBQEBAQ' +
+                    'EBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUE' +
+                    'BAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8C' +
+                    'QzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZX' +
+                    'WFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoq' +
+                    'OkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj' +
+                    '5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAA' +
+                    'AAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQID' +
+                    'EQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04S' +
+                    'XxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZn' +
+                    'aGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqa' +
+                    'qys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery' +
+                    '8/T19vf4+fr/2gAMAwEAAhEDEQA/AP7+KKKKAP/Z'
   var imageUrlJPEG = 'data:image/jpeg;base64,' + b64DataJPEG
   var blobJPEG = canCreateBlob && window.dataURLtoBlob(imageUrlJPEG)
   function createBlob (data, type) {
@@ -503,6 +578,15 @@
         )
       })
     })
+
+    it('Should parse XMP information', function (done) {
+      loadImage.parseMetaData(blobJPEG, function (data) {
+        expect(data.xmp).to.be.ok()
+        expect(data.xmp.get('Rating')).to.be("5")
+        done()
+      })
+    })
+
   })
 }(
   this.expect,
